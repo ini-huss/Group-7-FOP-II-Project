@@ -14,6 +14,12 @@ CREATE TABLE orders (
     -- Link to users table via user_phone
     FOREIGN KEY (user_phone) REFERENCES users(user_phone) 
 );
+CREATE TABLE menu_items (
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(20)
+);
 CREATE TABLE feedback (
     feedback_id INT AUTO_INCREMENT PRIMARY KEY,
     user_phone VARCHAR(15),
@@ -22,9 +28,4 @@ CREATE TABLE feedback (
     -- Link to users table via user_phone
     FOREIGN KEY (user_phone) REFERENCES users(user_phone)
 );
-CREATE TABLE menu_items (
-    item_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
-    price DECIMAL(10, 2) NOT NULL,
-    category VARCHAR(20)
-);
+
